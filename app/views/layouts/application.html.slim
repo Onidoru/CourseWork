@@ -11,9 +11,61 @@ html
     |">
 
     #banner
-      = image_tag 'logo.svg', alt: 'Store'
-        #span.title
-          == @page_title
+      nav
+        .container
+          ul.navbar-left
+            li
+              a[href="#"]
+                | Homes
+            li
+              a[href="#about"]
+                | About
+          ul.navbar-right
+            li
+              a#cart[href="#"]
+                i.fa.fa-shopping-cart
+                |  Cart 
+                span.badge
+                  | 3
+      .container
+        .shopping-cart
+          .shopping-cart-header
+            i.fa.fa-shopping-cart.cart-icon
+            span.badge
+              | 3
+            .shopping-cart-total
+              span.lighter-text
+                | Total:
+              span.main-color-text
+                | $2,229.97
+          ul.shopping-cart-items
+            li.clearfix
+              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1"]
+              span.item-name
+                | Sony DSC-RX100M III
+              span.item-price
+                | $849.99
+              span.item-quantity
+                | Quantity: 01
+            li.clearfix
+              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1"]
+              span.item-name
+                | KS Automatic Mechanic...
+              span.item-price
+                | $1,249.99
+              span.item-quantity
+                | Quantity: 01
+            li.clearfix
+              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1"]
+              span.item-name
+                | Kindle, 6" Glare-Free To...
+              span.item-price
+                | $129.99
+              span.item-quantity
+                | Quantity: 01
+          a.button[href="#"]
+            | Checkout
+    
     #columns
       #side
         #cart

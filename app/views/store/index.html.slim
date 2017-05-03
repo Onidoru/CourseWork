@@ -6,7 +6,7 @@ h1
   - @products.each do |product|
     - cache product do
       .entry
-        = image_tag(product.image_url)
+        /= image_tag(product.image_url)
         h3
           = product.title
         = sanitize(product.description)

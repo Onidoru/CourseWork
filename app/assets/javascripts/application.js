@@ -15,3 +15,25 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+console.log("Complies");
+
+// $(document).ready(function(){
+// $("#cart").click(function(e){
+//     e.preventDefault();
+//     $(".shopping-cart").fadeToggle( "fast");
+//     console.log("should change cart state");
+//
+// });
+// })
+
+
+
+document.addEventListener("turbolinks:load", function() {
+
+  $("#cart").on("click", function(e) {
+    $(".shopping-cart").fadeToggle( "fast");
+    e.preventDefault();
+    console.log("should change cart state");
+  });
+})
