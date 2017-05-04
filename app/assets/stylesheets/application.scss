@@ -1,15 +1,13 @@
-body,
-body > ol,
-body > p,
-body > td,
-body > ul {
-  margin: 8px !important;
-}
-@import "font-awesome-sprockets";
 @import "font-awesome";
-
-$main-color: #6394F8;
+@import "font-awesome-sprockets";
 $light-text: #ABB0BE;
+$main-color: #6394F8;
+
+body {
+  background: $main-color;
+  position: absolute;
+  z-index: 1;
+}
 
 *,
 *:after,
@@ -20,22 +18,28 @@ $light-text: #ABB0BE;
 #banner {
   font: 14px/22px "Lato", Arial, sans-serif;
   background: #6394F8;
+  position: relative;
 
   .lighter-text {
-    color: #ABB0BE;
+    color: $light-text;
   }
 
   .main-color-text {
     color: $main-color;
   }
 
+  #current_item {
+    display: none;
+  }
+
   nav {
-    padding: 20px 0 40px;
+    padding: 1px 0 50px;
     background: #F8F8F8;
     font-size: 16px;
 
     .navbar-left {
       float: left;
+      margin-bottom: 20px;
     }
 
     .navbar-right {
@@ -45,7 +49,9 @@ $light-text: #ABB0BE;
     ul {
       li {
         display: inline;
-        padding-left: 20px;
+        padding-left: 10px;
+        padding-top: 5px;
+        list-style-type: none;
 
         a {
           color: #777777;
@@ -62,10 +68,12 @@ $light-text: #ABB0BE;
   .container {
     margin: auto;
     width: 80%;
+    position: absolute;
+    cursor: pointer;
   }
 
   .badge {
-    background-color: #6394F8;
+    background-color: $main-color;
     border-radius: 10px;
     color: white;
     display: inline-block;
@@ -78,13 +86,14 @@ $light-text: #ABB0BE;
   }
 
   .shopping-cart {
-    margin: 20px 0;
+    margin: 10px 0 0 0;
+    padding: 20px 20px 15px 20px;
     float: right;
     background: white;
-    width: 320px;
+    min-width: 320px;
     position: relative;
     border-radius: 3px;
-    padding: 20px;
+    z-index: 2;
 
     .shopping-cart-header {
       border-bottom: 1px solid #E8E8E8;
@@ -96,10 +105,11 @@ $light-text: #ABB0BE;
     }
 
     .shopping-cart-items {
-      padding-top: 20px;
+      padding-top: 5px;
+      padding-left: 10px;
 
       li {
-        margin-bottom: 18px;
+        list-style-type: none;
       }
 
       img {
@@ -109,17 +119,42 @@ $light-text: #ABB0BE;
 
       .item-name {
         display: block;
-        padding-top: 10px;
+        //padding-top: 10px;
         font-size: 16px;
+        padding-top: 10px;
+
+        #item-title {
+          //padding-right: 20px;
+        }
       }
 
       .item-price {
         color: $main-color;
-        margin-right: 8px;
+        margin-right: 2px;
+        float: right;
       }
 
       .item-quantity {
         color: $light-text;
+        float: left;
+      }
+    }
+
+    .quantity {
+      form,
+      input {
+        background: white;
+        color: $main-color;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        font-size: 12px;
+        float: right;
+
+        &:hover {
+          border: none;
+          border-color: white;
+        }
       }
     }
   }
@@ -146,19 +181,44 @@ $light-text: #ABB0BE;
   }
 
   .button {
-    background: $main-color;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
     display: block;
-    border-radius: 3px;
     font-size: 16px;
-    margin: 25px 0 15px;
+    margin: auto;
+    padding: 0 15px 0 15px;
+    text-align: center;
+    text-decoration: none;
 
-    &:hover {
-      background: lighten($main-color, 3%);
+    form,
+    input {
+      background: $main-color;
+      border: none;
+      color: white;
+      font-size: 16px;
+      float: none;
+      width: 280px;
+      height: 40px;
+      border-radius: 5px;
+      display: inline;
+
+      &:hover {
+        background: lighten($main-color, 3%);
+        border: none;
+      }
     }
+
+    // form.button-right {
+    //   border-bottom-left-radius: 0;
+    //   border-top-left-radius: 0;
+    //   // border-left: solid;
+    //   // border-left-color: #777777;
+    // }
+    //
+    // form.button-left {
+    //   border-bottom-right-radius: 0;
+    //   border-top-right-radius: 0;
+    //   // border-right: solid;
+    //   // border-right-color: #777777;
+    // }
   }
 
   .clearfix:after {
@@ -184,6 +244,7 @@ $light-text: #ABB0BE;
 #columns {
   background: #141;
   display: flex;
+  position: relative;
 
   #main {
     padding: 1em;

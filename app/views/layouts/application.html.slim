@@ -5,6 +5,7 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link[href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"]
     
     | <body class="
     = controller.controller_name
@@ -15,85 +16,49 @@ html
         .container
           ul.navbar-left
             li
-              a[href="#"]
+              a[]
                 | Homes
             li
-              a[href="#about"]
+              a[]
                 | About
           ul.navbar-right
-            li
-              a#cart[href="#"]
+            li#container-cart
+              a#cart[]
                 i.fa.fa-shopping-cart
                 |  Cart 
-                span.badge
-                  | 3
+                - if @cart 
+                  span.badge
+                    = @cart.line_items.sum('quantity')
       .container
-        .shopping-cart
-          .shopping-cart-header
-            i.fa.fa-shopping-cart.cart-icon
-            span.badge
-              | 3
-            .shopping-cart-total
-              span.lighter-text
-                | Total:
-              span.main-color-text
-                | $2,229.97
-          ul.shopping-cart-items
-            li.clearfix
-              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1"]
-              span.item-name
-                | Sony DSC-RX100M III
-              span.item-price
-                | $849.99
-              span.item-quantity
-                | Quantity: 01
-            li.clearfix
-              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1"]
-              span.item-name
-                | KS Automatic Mechanic...
-              span.item-price
-                | $1,249.99
-              span.item-quantity
-                | Quantity: 01
-            li.clearfix
-              img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1"]
-              span.item-name
-                | Kindle, 6" Glare-Free To...
-              span.item-price
-                | $129.99
-              span.item-quantity
-                | Quantity: 01
-          a.button[href="#"]
-            | Checkout
-    
-    #columns
-      #side
-        #cart
+        .container-cart#cart
           - if @cart
             = hidden_div_if(@cart.line_items.empty?, id: 'cart') do
               = render @cart
-        ul
-          li
-            a[href="#"]
-              | Home
-          li
-            a[href="#"]
-              | Questions
-          li
-            a[href="#"]
-              | News
-          li
-            a[href="#"]
-              | Contact
-      
-      - if session[:user_id]
-        ul 
-          li 
-            = link_to 'Orders', orders_path
-          li 
-            = link_to 'Products', products_path
-          li 
-            = link_to 'Users', users_path
-      
-      #main
-        = yield
+        
+    / #columns
+    /   #side
+    /     ul
+    /       li
+    /         a[href="#"]
+    /           | Home
+    /       li
+    /         a[href="#"]
+    /           | Questions
+    /       li
+    /         a[href="#"]
+    /           | News
+    /       li
+    /         a[href="#"]
+    /           | Contact
+    /   
+    /   - if session[:user_id]
+    /     ul 
+    /       li 
+    /         = link_to 'Orders', orders_path
+    /       li 
+    /         = link_to 'Products', products_path
+    /       li 
+    /         = link_to 'Users', users_path
+    /   
+    #main
+      = yield
