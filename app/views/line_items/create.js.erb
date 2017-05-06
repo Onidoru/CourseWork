@@ -1,5 +1,12 @@
 $('#notice').hide();
 
+//if ($('.shopping-cart tr').length == 1) { $('.shopping-cart').show('blind', 1000); }
+
+$('#fa-cart').css({'color':'#00CC00'}).animate({'color':'#777777'}, 2500);
+
+
+
 $('.container-cart').html("<%=j render @cart %>");
-$(".shopping-cart").hide();
-$('.fa.fa-shopping-cart').css({'color':'#00CC00'}).animate({'color':'#777777'}, 2500);
+$('.shopping-cart').hide();
+
+//  = @cart.line_items.sum('quantity')

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize
-
+  include CurrentCart
   def new; end
 
   def create

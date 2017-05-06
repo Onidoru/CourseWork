@@ -1,16 +1,33 @@
 p#notice
   = notice
-h1
-  | Catalog
-- cache @products do
-  - @products.each do |product|
-    - cache product do
-      .entry
-        /= image_tag(product.image_url)
-        h3
-          = product.title
-        = sanitize(product.description)
-        .price_line
-          span.price
-            = number_to_currency(product.price)
-          = button_to 'Add to Cart', line_items_path(product_id: product), remote: true
+  
+.content
+  .store
+    - cache @products do
+      - @products.each do |product|
+        - cache product do
+          .preview
+            = image_tag(product.image_url)
+            .preview-container
+              #title
+                h3
+                  = link_to product.title, product
+              #price
+                = number_to_currency(product.price)
+              .button
+                = button_to 'Add to Cart', line_items_path(product_id: product), remote: true
+
+  / h1
+  /   | Catalog
+  / - cache @products do
+  /   - @products.each do |product|
+  /     - cache product do
+  /       .entry
+  /         /= image_tag(product.image_url)
+  /         h3
+  /           = link_to product.title, product 
+  /         = sanitize(product.description)
+  /         .price_line
+  /           span.price
+  /             = number_to_currency(product.price)
+  /           = button_to 'Add to Cart', line_items_path(product_id: product), remote: true

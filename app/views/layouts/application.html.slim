@@ -16,19 +16,28 @@ html
         .container
           ul.navbar-left
             li
-              a[]
-                | Homes
+              = link_to "Home", home_index_url
             li
-              a[]
-                | About
+              = link_to "Store", store_index_url
+            li
+              = link_to "About", store_index_url
+            
+            - if session[:user_id]
+              li 
+                = link_to 'Orders', orders_path
+              li 
+                = link_to 'Products', products_path
+              li 
+                = link_to 'Users', users_path 
+
           ul.navbar-right
             li#container-cart
-              a#cart[]
-                i.fa.fa-shopping-cart
+              a#cart
+                i.fa.fa-shopping-cart#fa-cart
                 |  Cart 
-                - if @cart 
-                  span.badge
-                    = @cart.line_items.sum('quantity')
+                / - if @cart 
+                /   span.badge
+                /     = @cart.line_items.sum('quantity')
       .container
         .container-cart#cart
           - if @cart
@@ -59,6 +68,6 @@ html
     /         = link_to 'Products', products_path
     /       li 
     /         = link_to 'Users', users_path
-    /   
-    #main
+    /
+    .main
       = yield

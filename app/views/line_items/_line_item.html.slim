@@ -4,10 +4,11 @@
   <li class="clearfix">
 /img[src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1"]
 span.item-name
-  = line_item.product.title
   .quantity
     = button_to "-", decrease_line_item_path(line_item), method: :put, remote: true
     = button_to '+', increase_line_item_path(line_item), method: :put, remote: true
+  = line_item.product.title
+br
 span.item-price
   = number_to_currency(line_item.total_price)
 span.item-quantity

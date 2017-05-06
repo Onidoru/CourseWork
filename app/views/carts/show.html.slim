@@ -1,4 +1,13 @@
 p#notice
   = notice
-h3 Your Cart:
-= render @cart
+.content
+  .panel
+
+  h3 Cart:
+  p 
+    | Items: 
+    = @cart.line_items.sum('quantity')
+  p 
+    | Total price: 
+    = number_to_currency(@cart.total_price)
+  = render(@cart.line_items)

@@ -1,23 +1,25 @@
-p#notice 
-h1 Products: 
+p#notice
+  = notice
 
-table 
-  - @products.each do |product|
-    | <tr class = "
-    = cycle('list_line_odd', 'list_line_even')    
-    | ">
-    td 
-      = image_tag(product.image_url, class: 'list_image')
-    td.list_description
-      dl
-        dt
-          = product.title
-        dd
-          = truncate(strip_tags(product.description), length: 80)
-        td.list_actions
-          = link_to 'Show', product
-          br
-          = link_to 'Edit', edit_product_path(product)
-          br
-          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
-= link_to 'New product', new_product_path
+.content
+  .panel
+    h2 Products list: 
+    table 
+      - @products.each do |product|
+        | <tr class = "
+        = cycle('list_line_odd', 'list_line_even')    
+        | ">
+        td 
+        //  = image_tag(product.image_url, class: 'list_image')
+        td.list_description
+          dl
+            dt
+              h3
+                = product.title
+            dd
+              = truncate(strip_tags(product.description), length: 80)
+            td.list_actions
+              = link_to 'Show', product
+              = link_to 'Edit', edit_product_path(product)
+              = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to 'New product', new_product_path

@@ -1,19 +1,21 @@
-h1 Listing carts
+.content
+  .panel
+    h2 Listing carts
 
-table
-  thead
-    tr
-      th
-      th
-      th
+    table
+      thead
+        tr
+          th
+          th
+          th
 
-  tbody
-    - @carts.each do |cart|
-      tr
-        td = link_to 'Show', cart
-        td = link_to 'Edit', edit_cart_path(cart)
-        td = link_to 'Destroy', cart, data: { confirm: 'Are you sure?' }, method: :delete
+      tbody
+        - @carts.each do |cart|
+          tr
+            td = link_to 'Show', cart
+            td = link_to 'Edit', edit_cart_path(cart)
+            td = link_to 'Destroy', cart, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
+    br
 
-= link_to 'New Cart', new_cart_path
+    = link_to 'New Cart', new_cart_path
