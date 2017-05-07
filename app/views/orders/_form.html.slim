@@ -8,14 +8,16 @@
 
   .field
     = f.label :name
-    = f.text_field :name, size: 40
+    = f.text_field :name, size: 40, maxlength: 100
   .field
     = f.label :address
-    = f.text_area :address, rows: 3, cols: 40
+    = f.text_area :address, rows: 3, cols: 44, maxlength: 500
   .field
     = f.label :email
-    = f.text_field :email, size: 40
+    = f.text_field :email, size: 40, maxlength: 100
   .field
     = f.label :pay_type
     = f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method'
-  .actions = f.submit 'Place order'
+  .button
+    .actions 
+      = f.submit 'Place order'

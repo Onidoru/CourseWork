@@ -1,5 +1,8 @@
+
+
 p#notice
   = notice
+
 .content
   .panel
     h2 Orders list:
@@ -17,10 +20,29 @@ p#notice
       tbody
         - @orders.each do |order|
           tr
-            td = order.name
+            td = truncate(order.name, length: 80)
             td = order.address
             td = order.email
             td = order.pay_type
             td = link_to 'Show', order
             td = link_to 'Edit', edit_order_path(order)
             td = link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete
+
+/ .content
+/   .panel
+/     .depot_form
+/       - if flash[:alert]
+/         p#notice
+/           = flash[:alert]
+/       = form_tag do
+/         fieldset
+/           legend
+/             | Please Log In
+/           div
+/             = label_tag :name, 'Name:'
+/             = text_field_tag :name, params[:name]
+/           div
+/             = label_tag :password, 'Password:'
+/             = password_field_tag :password, params[:password]
+/           .button
+/             = submit_tag "Login"

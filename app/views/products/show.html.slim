@@ -1,21 +1,20 @@
 p#notice = notice
+.content
+  .panel
+    #product_image
+      = image_tag(@product.image_url, :align => "left")
+    #product_text
+      h3
+        = @product.title
+      #product_description
+        = strip_tags(@product.description)
+      #product_price
+        = number_to_currency(@product_price)
+      .button
+        = button_to 'Add to Cart', line_items_path(product_id: @product), remote: true
 
-p
-  strong Title:
-  = @product.title
-p
-  strong Description:
-  = @product.description
-p
-  strong Image url:
-  = @product.image_url
-p
-  strong Price:
-  = @product.price
-
-= button_to 'Add to Cart', line_items_path(product_id: @product), remote: true
-
-- if session[:user_id]
-  = link_to 'Edit', edit_product_path(@product)
-  '  |
-  = link_to 'Back', products_path
+    br
+    - if session[:user_id]
+    = link_to 'Edit', edit_product_path(@product)
+    '  |
+    = link_to 'Back', products_path

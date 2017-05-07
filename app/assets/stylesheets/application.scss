@@ -1,5 +1,6 @@
 @import "font-awesome";
 @import "font-awesome-sprockets";
+$grey: #F8F8F8;
 $font-color: #515783;
 $light-text: #ABB0BE;
 $main-color: #6394F8;
@@ -17,7 +18,7 @@ body {
 }
 
 #banner {
-  background: #6394F8;
+  background: $main-color;
   padding-top: 0;
 
   .lighter-text {
@@ -28,15 +29,10 @@ body {
     color: $main-color;
   }
 
-  #current_item {
-    display: none;
-  }
-
   nav {
     padding: 0 0 50px;
-    background: #F8F8F8;
+    background: $grey;
     font-size: 16px;
-    //min-width: 700px;
     width: 100%;
 
     .navbar-left {
@@ -100,7 +96,6 @@ body {
     border-radius: 5px;
     z-index: 2;
 
-
     .shopping-cart-header {
       border-bottom: 1px solid #E8E8E8;
       padding-bottom: 15px;
@@ -114,15 +109,15 @@ body {
       padding-top: 5px;
       padding-left: 10px;
       max-height: 400px;
-      overflow-y: scroll;
+      overflow-y: auto;
 
       li {
         list-style-type: none;
+        vertical-align: top;
       }
 
       .item-name {
         display: inline-block;
-        //padding-top: 10px;
         font-size: 16px;
         padding-top: 10px;
         width: 306px;
@@ -177,7 +172,7 @@ body {
   }
 
   .cart-icon {
-    color: #515783;
+    color: $font-color;
     font-size: 24px;
     margin-right: 7px;
     float: left;
@@ -186,15 +181,13 @@ body {
   .button {
     border-top: 1px solid #E8E8E8;
     display: block;
-    font-size: 16px;
-    margin: auto;
+    font-size: 16px;margin: auto;
     padding: 15px;
     text-align: center;
     text-decoration: none;
 
     form,
     input {
-      //padding-top: 15px;
       background: $main-color;
       border: none;
       color: white;
@@ -222,12 +215,7 @@ body {
 
 .depot_form {
   fieldset {
-    background: #efe;
-
     legend {
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
       padding: 0.2em 1em;
     }
 
@@ -249,6 +237,7 @@ body {
     input,
     select,
     textarea {
+      border-radius: 2px;
       margin-left: 0.5em;
     }
 
@@ -256,9 +245,21 @@ body {
       margin-left: 4em;
     }
 
+    .button {
+      font-size: 16pt;
+
+    }
+
     br {
       display: none;
     }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px $main-color;
+        //border: solid 1px $main-color;
+    }
+
   }
 }
 // Depot end
@@ -284,7 +285,7 @@ body {
   h1 {
     font-size: 48pt;
     padding-top: 25px;
-    color: #F8F8F8;
+    color: $grey;
     font-style: 'manga-temple';
     font-family: 'manga-temple';
   }
@@ -333,12 +334,13 @@ body {
 
   .content {
     //margin: auto;
-    background: #F8F8F8;
+    background: $grey;
     border-radius: 10px;
     display: inline-block;
     margin: 2% 2% 0.5%;
     padding: 20px;
     text-align: justify;
+    max-width: 90%;
 
     .store {
       width: 1350px;
@@ -346,7 +348,7 @@ body {
 
     a {
       text-decoration: none;
-      color: #515783;
+      color: $font-color;
       padding-right: 5px;
     }
 
@@ -376,6 +378,7 @@ body {
         text-align: center;
         text-decoration: none;
 
+
         form,
         input {
           //padding-top: 15px;
@@ -399,6 +402,42 @@ body {
 
     .panel {
       min-width: 500px;
+      display: inline-block;
+
+      img {
+        max-width: 300px;
+        float: left;
+        display: block;
+      }
+
+      .button {
+        //border-top: 1px solid #E8E8E8;
+        display: inline-block;
+        font-size: 16px;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+
+        form,
+        input {
+          background: $main-color;
+          border: none;
+          color: white;
+          font-size: 16px;
+          float: none;
+          width: 180px;
+          height: 30px;
+          border-radius: 5px;
+          display: inline;
+
+          &:hover {
+            background: lighten($main-color, 3%);
+            border: none;
+          }
+        }
+      }
+
     }
   }
 }

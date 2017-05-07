@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Don't forget about  `LineItem.destroy_all`
+Product.destroy_all
 Product.delete_all
 LineItem.destroy_all
+# //Cart.destroy_all
+
 User.delete_all
 
 User.create(name: 'dave', password: 'secret', password_confirmation: 'secret')
@@ -23,7 +26,7 @@ bought on the shelves of Japanese supermarkets. Some of you might wonder why
 you need instant ramen with Pikachu printed on the front when a normal version
 will taste the same.
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 6.54)
 
 Product.create(title: 'Jelly Pack',
@@ -35,7 +38,7 @@ Here is a perfect friend chocolate, chocolate gifts, Deco 45 pieces.
 Tyrol's capybara's cute package is 5 pattern each nine each contains.
 Look for because there are other favorites.
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 26.00)
 
 Product.create(title: 'Velcommen Pack',
@@ -46,7 +49,7 @@ Speak with a war cry of "stemming". Or jump. Mascot character will be no quick m
 Friend chocolate, chocolate is a perfect "DECO Choco 45 pieces.
 Beech! and-are cute packages Tyrol 5 pattern each nine by offers!
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 29.00)
 
 Product.create(title: 'Cinema Sweets',
@@ -58,7 +61,7 @@ Ichigo Flavor Chocolate and milk chocolate are sandwiched between strawberry jel
 Ichigo Jelly "to DECO chocolate with the cooperation of Tyrol Choco Co., Ltd.
 I will add it to the taste lineup.
 </p>),
-               image_url: 'cinema_collection.jpg',
+               image_url: 'cinema_collection.png',
                price: 38.00)
 
 Product.create(title: 'Dunk Donuts',
@@ -69,7 +72,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 25.00)
 
 Product.create(title: 'Ice Cream Pack',
@@ -80,7 +83,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'cinema_collection.jpg',
+               image_url: 'cinema_collection.png',
                price: 25.00)
 
 Product.create(title: 'Chocolate Bars',
@@ -91,7 +94,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 25.00)
 
 Product.create(title: 'Shinobu Bars',
@@ -113,7 +116,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 25.00)
 
 Product.create(title: 'TV Size Pack',
@@ -135,7 +138,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'velcommen.jpg',
+               image_url: 'velcommen.png',
                price: 25.00)
 
 Product.create(title: 'Ohayo Pack',
@@ -146,7 +149,7 @@ Our doughnuts arrive at your door plain and separated from our original, homemad
 If you're short on macros, you can cut back a bit on how much glaze you add to your DOUGHnut.
 If you have some wiggle room, you can glaze away!
 </p>),
-               image_url: 'cinema_collection.jpg',
+               image_url: 'cinema_collection.png',
                price: 25.00)
 
 Product.create(title: 'Gaijin Pack',
