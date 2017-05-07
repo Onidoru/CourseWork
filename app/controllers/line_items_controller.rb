@@ -27,7 +27,6 @@ class LineItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
-
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_index_url }
@@ -59,7 +58,6 @@ class LineItemsController < ApplicationController
   def decrease
     # @cart = current_cart
     @line_item = @cart.decrease(params[:id])
-
     respond_to do |format|
       if @line_item.save
         format.html do
@@ -80,7 +78,6 @@ class LineItemsController < ApplicationController
   def increase
     # @cart = current_cart
     @line_item = @cart.increase(params[:id])
-
     respond_to do |format|
       if @line_item.save
         format.html do

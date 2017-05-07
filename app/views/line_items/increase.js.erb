@@ -1,6 +1,6 @@
 //if ($('#shopping-cart li').length == 1) { $('#shopping-cart').show('blind', 1000); }
 
 $('.container-cart').html("<%=j render @cart %>");
-
+$('.badge').html(<%= @cart.line_items.sum('quantity') %>);
 $('.fa.fa-shopping-cart.cart-icon').css({'color':'#00CC00'}).animate({'color':'#515783'}, 2500);
 $('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#F8F8F8'}, 1000);

@@ -4,9 +4,9 @@ $('#notice').hide();
 
 $('#fa-cart').css({'color':'#00CC00'}).animate({'color':'#777777'}, 2500);
 
-
-
 $('.container-cart').html("<%=j render @cart %>");
+$('.badge').html(<%= @cart.line_items.sum('quantity') %>);
+
 $('.shopping-cart').hide();
 
 //  = @cart.line_items.sum('quantity')

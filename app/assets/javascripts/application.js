@@ -31,9 +31,10 @@ $(document).on('turbolinks:load', function() {
       $container.hide();
     }
   });
+});
 
   // TODO: Fix script for resize mod
-  
+
   // var paddingLeft = parseInt($('.content').css('padding-left')),
   //     paddingRight = parseInt($('.content').css('padding-left')),
   //     paddingTop = parseInt($('.content').css('padding-top')),
@@ -56,5 +57,3 @@ $(document).on('turbolinks:load', function() {
   //     $('.content').css('width', cloned.width() + 1);
   //     $(cloned_wrap).css('margin-top',- $('.content').height() - paddingTop - paddingBottom);
   // }).resize();
-
-});

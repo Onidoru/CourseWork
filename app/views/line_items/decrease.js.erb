@@ -1,3 +1,4 @@
 $('.container-cart#cart').html("<%=j render @cart %>");
+$('.badge').html(<%= @cart.line_items.sum('quantity') %>);
 
 $('.fa.fa-shopping-cart.cart-icon').css({'color':'#CC0000'}).animate({'color':'#515783'}, 2500);
