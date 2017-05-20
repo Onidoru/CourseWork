@@ -1,4 +1,4 @@
-- unless cart.line_items.empty?
+- if cart.line_items.present?
   .shopping-cart
     .shopping-cart-header
       i.fa.fa-shopping-cart.cart-icon
