@@ -10,16 +10,3 @@ li
   span.item-quantity
     | Quantity: 
     = line_item.quantity
-  
-/ tr 
-/   td
-/     = line_item.product.title
-/   td
-/     = button_to "-", decrease_line_item_path(line_item), method: :put, remote: true
-/     = button_to '+', increase_line_item_path(line_item), method: :put, remote: true
-/ tr
-/   td
-/     | Quantity: 
-/     = line_item.quantity
-/   td 
-/     = number_to_currency(line_item.total_price)
