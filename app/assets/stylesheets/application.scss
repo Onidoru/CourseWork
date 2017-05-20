@@ -1,9 +1,10 @@
 @import "font-awesome";
 @import "font-awesome-sprockets";
-$grey: white;
+$panel-back: white;
 $font-color: #515783;
 $light-text: #ABB0BE;
 $main-color: #6394F8;
+$nav-text: #777777;
 @font-face {
   font-family: 'manga-temple';
   src: font-url('manga-temple.ttf');
@@ -32,7 +33,7 @@ body {
 
   nav {
     padding: 0 0 50px;
-    background: $grey;
+    background: $panel-back;
     font-size: 16px;
     width: 100%;
 
@@ -58,13 +59,27 @@ body {
         list-style-type: none;
 
         a {
-          color: #777777;
+          color: $nav-text;
           text-decoration: none;
 
           &:hover {
             color: black;
           }
         }
+        input {
+          background: white;
+          color: $nav-text;
+          text-decoration: none;
+          cursor: pointer;
+          border: none;
+          font-size: 15px;
+
+          &:hover {
+            border: none;
+            color: black;
+          }
+        }
+
       }
     }
   }
@@ -89,13 +104,14 @@ body {
   }
 
   .shopping-cart {
-    margin: 10px 0 0;
-    padding: 20px 20px 15px;
-    float: right;
     background: white;
-    min-width: 320px;
-    position: relative;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    padding: 20px 20px 15px;
+    position: relative;
+    margin: 10px 0 0;
+    min-width: 320px;
     z-index: 2;
 
     .shopping-cart-header {
@@ -264,7 +280,7 @@ body {
 
   color: #000 !important;
   border: 2px solid $font-color;
-  background-color: $grey;
+  background-color: $panel-back;
   font: bold smaller sans-serif;
   margin: auto;
   padding: 1em;
@@ -286,7 +302,7 @@ body {
   h1 {
     font-size: 48pt;
     padding-top: 25px;
-    color: $grey;
+    color: $panel-back;
     font-style: 'manga-temple';
     font-family: 'manga-temple';
   }
@@ -335,7 +351,7 @@ body {
 
   .content {
     margin: auto;
-    background: $grey;
+    background: $panel-back;
     border-radius: 10px;
     display: inline-block;
     margin: 2% 2% 0.5%;
