@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   root 'home#index', as: 'home_index'
 
   resources :line_items do
-    put 'decrease', on: :member
-    put 'increase', on: :member
+    post 'decrease', on: :member
+    post 'increase', on: :member
   end
 
   resources :products do

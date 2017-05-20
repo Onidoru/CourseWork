@@ -1,17 +1,25 @@
-- if line_item == @current_item
-  <li class="clearfix" id="current_item">
-- else
-  <li class="clearfix">
-
-span.item-name
-  .quantity
-    = button_to "-", decrease_line_item_path(line_item), method: :put, remote: true
-    = button_to '+', increase_line_item_path(line_item), method: :put, remote: true
-  = line_item.product.title
-br
-span.item-price
-  = number_to_currency(line_item.total_price)
-span.item-quantity
-  | Quantity: 
-  = line_item.quantity
-  </li>
+li  
+  span.item-name
+    .quantity
+      = button_to "-", decrease_line_item_path(line_item), method: :post, remote: true
+      = button_to '+', increase_line_item_path(line_item), method: :post, remote: true
+    = line_item.product.title
+  br
+  span.item-price
+    = number_to_currency(line_item.total_price)
+  span.item-quantity
+    | Quantity: 
+    = line_item.quantity
+  
+/ tr 
+/   td
+/     = line_item.product.title
+/   td
+/     = button_to "-", decrease_line_item_path(line_item), method: :put, remote: true
+/     = button_to '+', increase_line_item_path(line_item), method: :put, remote: true
+/ tr
+/   td
+/     | Quantity: 
+/     = line_item.quantity
+/   td 
+/     = number_to_currency(line_item.total_price)

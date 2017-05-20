@@ -1,0 +1,18 @@
+@import "font-awesome";
+@import "font-awesome-sprockets";
+$grey: #F8F8F8;
+$font-color: #515783;
+$light-text: #ABB0BE;
+$main-color: #6394F8;
+@font-face {
+  font-family: 'manga-temple';
+  src: font-url('manga-temple.ttf');
+  src: font-url('manga-temple.ttf?#iefix') format('truetype');
+}
+
+body {
+  background: $main-color;
+  font: 14px/22px "Lato", Arial, sans-serif;
+  margin: 0;
+  z-index: 1;
+}

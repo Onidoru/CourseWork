@@ -3,13 +3,13 @@ p#notice = notice
   .panel
     p
       strong Name:
-      = @order.name
+      = truncate(@order.name, length: 50)
     p
       strong Address:
-      = @order.address
+      = truncate(@order.address, length: 50)
     p
       strong Email:
-      = @order.email
+      = truncate(@order.email, length: 50)
     p
       strong Pay type:
       = @order.pay_type

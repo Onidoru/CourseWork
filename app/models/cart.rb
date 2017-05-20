@@ -23,7 +23,7 @@ class Cart < ApplicationRecord
       current_item.destroy
     end
     current_item
-    end
+  end
 
   def increase(line_item_id)
     current_item = line_items.find(line_item_id)

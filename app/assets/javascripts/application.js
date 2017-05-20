@@ -16,22 +16,25 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
-
-  $(".shopping-cart").hide();
-
-  $("#cart").click(function(e) {
-    e.preventDefault();
-    $(".shopping-cart").fadeToggle("fast");
-  });
-
-  $(document).mouseup(function(e) {
-    var $container = $(".shopping-cart");
-    if (!$("#cart").is(e.target) && !$container.is(e.target) && $container.has(e.target).length === 0) {
-      $container.hide();
-    }
-  });
-});
+// $(document).on('turbolinks:load', function() {
+//
+//   var notice = $("#notice");
+//   setTimeout(function() { notice.hide(); }, 2000);
+//
+//   $(".shopping-cart").hide();
+//
+//   $("#cart").click(function(e) {
+//     e.preventDefault();
+//     $(".shopping-cart").fadeToggle("fast");
+//   });
+//
+//   $(document).mouseup(function(e) {
+//     var $container = $(".shopping-cart");
+//     if (!$("#cart").is(e.target) && !$container.is(e.target) && $container.has(e.target).length === 0) {
+//       $container.hide();
+//     }
+//   });
+// });
 
   // TODO: Fix script for resize mod
 

@@ -53,10 +53,9 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # PUT /line_items/1
-  # PUT /line_items/1.json
+  # POST /line_items/1
+  # POST /line_items/1.json
   def decrease
-    # @cart = current_cart
     @line_item = @cart.decrease(params[:id])
     respond_to do |format|
       if @line_item.save
@@ -64,17 +63,18 @@ class LineItemsController < ApplicationController
           redirect_to store_path, notice: 'Line item was successfully
           updated.'
         end
-        format.js   { @current_item = @line_item }
+        format.js   { @line_item}
         format.json { head :ok }
       else
         format.html { render action: 'edit' }
+        format.js { @current_item = @line_item }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /line_items/1
-  # PUT /line_items/1.json
+  # POST /line_items/1
+  # POST /line_items/1.json
   def increase
     # @cart = current_cart
     @line_item = @cart.increase(params[:id])
@@ -84,10 +84,11 @@ class LineItemsController < ApplicationController
           redirect_to store_path, notice: 'Line item was successfully
             updated.'
         end
-        format.js   { @current_item = @line_item }
+        format.js   {  }
         format.json { head :ok }
       else
         format.html { render action: 'edit' }
+        format.js { @line_item }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end

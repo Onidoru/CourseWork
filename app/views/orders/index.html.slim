@@ -20,9 +20,9 @@ p#notice
       tbody
         - @orders.each do |order|
           tr
-            td = truncate(order.name, length: 80)
-            td = order.address
-            td = order.email
+            td = truncate(order.name, length: 40)
+            td = truncate(order.address, length: 40)
+            td = truncate(order.email, length: 25)
             td = order.pay_type
             td = link_to 'Show', order
             td = link_to 'Edit', edit_order_path(order)

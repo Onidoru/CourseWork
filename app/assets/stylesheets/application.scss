@@ -1,6 +1,6 @@
 @import "font-awesome";
 @import "font-awesome-sprockets";
-$grey: #F8F8F8;
+$grey: white;
 $font-color: #515783;
 $light-text: #ABB0BE;
 $main-color: #6394F8;
@@ -15,6 +15,7 @@ body {
   font: 14px/22px "Lato", Arial, sans-serif;
   margin: 0;
   z-index: 1;
+  overflow-y: scroll;
 }
 
 #banner {
@@ -34,6 +35,7 @@ body {
     background: $grey;
     font-size: 16px;
     width: 100%;
+
 
     .navbar-left {
       float: left;
@@ -205,11 +207,11 @@ body {
     }
   }
 
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  // .clearfix:after {
+  //   content: "asd ";
+  //   display: table;
+  //   clear: both;
+  // }
 }
 // Banner end
 
@@ -265,12 +267,17 @@ body {
 // Depot end
 
 #notice {
+
   color: #000 !important;
-  border: 2px solid red;
-  padding: 1em;
-  margin-bottom: 2em;
-  background-color: #f0f0f0;
+  border: 2px solid $font-color;
+  background-color: $grey;
   font: bold smaller sans-serif;
+  margin: auto;
+  padding: 1em;
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+  width: 80%;
 }
 
 #notice:empty {
@@ -333,7 +340,7 @@ body {
   }
 
   .content {
-    //margin: auto;
+    margin: auto;
     background: $grey;
     border-radius: 10px;
     display: inline-block;
